@@ -3,11 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>رسالتي إليكِ في رأس السنة 2026 ❤️</title>
+    <title>رسالة حب في رأس السنة 2026 | لكِ وحدكِ 💖</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Lateef&family=Reem+Kufi&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Lateef&family=Reem+Kufi&family=Scheherazade+New&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -15,438 +13,223 @@
             box-sizing: border-box;
         }
 
-        body {
-            font-family: 'Amiri', serif;
-            background: linear-gradient(135deg, #0a0a1a 0%, #1a0b2e 50%, #2d0b3e 100%);
-            color: #fff;
-            min-height: 100vh;
-            overflow-x: hidden;
-            position: relative;
-            line-height: 1.8;
+        :root {
+            --primary: #ff4d6d;
+            --secondary: #ff8e9e;
+            --light: #ffb3c1;
+            --dark: #0a0a1a;
+            --gold: #ffd700;
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            --transition: all 0.3s ease;
         }
 
-        /* خلفية النجوم */
-        .stars {
+        body {
+            font-family: 'Scheherazade New', serif;
+            background: linear-gradient(135deg, #0a0a1a 0%, #1a0b2e 100%);
+            color: #fff;
+            min-height: 100vh;
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+
+        /* الخلفية المتحركة */
+        .bg-animation {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            pointer-events: none;
-            z-index: -1;
+            z-index: -2;
+            opacity: 0.3;
         }
 
-        .star {
+        .bg-animation:before {
+            content: '';
             position: absolute;
-            background-color: #fff;
-            border-radius: 50%;
-            animation: twinkle 3s infinite;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, var(--primary) 0%, transparent 70%);
+            animation: pulse 20s infinite alternate;
         }
 
-        .star.small { width: 1px; height: 1px; }
-        .star.medium { width: 2px; height: 2px; }
-        .star.large { width: 3px; height: 3px; }
-
-        @keyframes twinkle {
-            0%, 100% { opacity: 0.2; }
-            50% { opacity: 1; }
-        }
-
-        /* القلب النابض */
-        .heart-beat {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            color: #ff4d6d;
-            font-size: 2rem;
-            animation: heartbeat 1.5s infinite;
-            z-index: 100;
-        }
-
-        @keyframes heartbeat {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.2); }
-            100% { transform: scale(1); }
+        @keyframes pulse {
+            0% { transform: translate(-50%, -50%) scale(1); opacity: 0.1; }
+            100% { transform: translate(-50%, -50%) scale(1.5); opacity: 0.2; }
         }
 
         /* الحاوية الرئيسية */
         .container {
-            max-width: 1000px;
+            max-width: 900px;
             margin: 0 auto;
             padding: 20px;
             position: relative;
             z-index: 1;
         }
 
-        /* الهيدر الخاص */
-        .special-header {
+        /* الهيدر الجديد */
+        .romantic-header {
             text-align: center;
-            padding: 40px 0 20px;
+            padding: 50px 0 30px;
             position: relative;
-            margin-bottom: 30px;
+            margin-bottom: 40px;
         }
 
-        .special-header:after {
+        .romantic-header:after {
             content: '';
             position: absolute;
             bottom: 0;
             left: 50%;
             transform: translateX(-50%);
-            width: 200px;
+            width: 300px;
             height: 3px;
-            background: linear-gradient(90deg, transparent, #ff4d6d, #ff758c, transparent);
+            background: linear-gradient(90deg, transparent, var(--primary), var(--gold), transparent);
         }
 
-        .special-header h1 {
-            font-family: 'Reem Kufi', sans-serif;
-            font-size: 3.5rem;
+        .romantic-header h1 {
+            font-family: 'Lateef', cursive;
+            font-size: 4rem;
             margin-bottom: 15px;
-            background: linear-gradient(45deg, #ff4d6d, #ff8e9e, #ffb3c1);
+            background: linear-gradient(45deg, var(--primary), var(--gold), var(--light));
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
-            text-shadow: 0 0 30px rgba(255, 77, 109, 0.3);
+            text-shadow: 0 0 40px rgba(255, 77, 109, 0.4);
+            letter-spacing: 2px;
         }
 
-        .special-header h2 {
-            font-size: 2rem;
-            color: #ffb3c1;
+        .romantic-header h2 {
+            font-size: 2.2rem;
+            color: var(--light);
             font-weight: normal;
             margin-bottom: 10px;
+            font-family: 'Reem Kufi', sans-serif;
         }
 
-        .date {
+        .date-badge {
+            display: inline-block;
+            background: rgba(255, 77, 109, 0.2);
+            padding: 10px 25px;
+            border-radius: 50px;
+            margin-top: 15px;
+            border: 1px solid rgba(255, 77, 109, 0.4);
             font-size: 1.2rem;
-            color: #ff8e9e;
-            margin-top: 10px;
+            color: var(--light);
+            backdrop-filter: blur(10px);
         }
 
-        /* الرسائل الخاصة */
-        .message-section {
-            margin: 60px 0;
+        /* الرسائل المحسنة */
+        .message-container {
+            margin: 40px 0;
             position: relative;
         }
 
-        .message {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
-            padding: 40px;
-            margin-bottom: 40px;
+        .message-card {
+            background: linear-gradient(145deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
+            backdrop-filter: blur(15px);
+            border-radius: 25px;
+            padding: 50px 40px;
+            margin-bottom: 50px;
             border: 1px solid rgba(255, 255, 255, 0.1);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
-            transition: transform 0.5s, box-shadow 0.5s;
+            box-shadow: var(--shadow);
             position: relative;
             overflow: hidden;
+            transition: var(--transition);
+            animation: fadeInUp 1s ease-out;
         }
 
-        .message:hover {
+        .message-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            border-color: rgba(255, 77, 109, 0.3);
         }
 
-        .message:before {
+        .message-card:before {
             content: '';
             position: absolute;
             top: 0;
-            left: 0;
-            width: 5px;
-            height: 100%;
-            background: linear-gradient(180deg, #ff4d6d, #ff8e9e);
+            right: 0;
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, var(--primary), transparent);
+            border-radius: 0 0 0 100%;
+            opacity: 0.1;
         }
 
         .message-number {
             position: absolute;
-            top: 15px;
-            left: 15px;
-            width: 40px;
-            height: 40px;
-            background: linear-gradient(45deg, #ff4d6d, #ff8e9e);
+            top: -20px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.3rem;
+            font-size: 1.8rem;
             color: white;
             font-weight: bold;
-            box-shadow: 0 5px 15px rgba(255, 77, 109, 0.3);
-        }
-
-        .message-content {
-            padding-right: 20px;
-            padding-left: 30px;
+            box-shadow: 0 10px 20px rgba(255, 77, 109, 0.3);
+            font-family: 'Reem Kufi', sans-serif;
+            z-index: 2;
         }
 
         .message-text {
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             line-height: 2.2;
             color: #ffdde1;
             text-align: justify;
-            margin-bottom: 20px;
+            padding: 0 10px;
+            position: relative;
+            z-index: 1;
         }
 
-        .message-signature {
+        .heart-word {
+            color: var(--primary);
+            font-weight: bold;
+            position: relative;
+            display: inline-block;
+            transition: var(--transition);
+        }
+
+        .heart-word:hover {
+            transform: scale(1.1);
+            text-shadow: 0 0 15px rgba(255, 77, 109, 0.7);
+        }
+
+        .signature-box {
             text-align: left;
-            font-size: 1.3rem;
-            color: #ff8e9e;
-            font-style: italic;
-            margin-top: 20px;
-            padding-right: 20px;
-            position: relative;
-        }
-
-        .message-signature:before {
-            content: "~";
-            position: absolute;
-            right: 0;
-            top: 0;
-            font-size: 2rem;
-            color: #ff4d6d;
-        }
-
-        /* التأثيرات الخاصة على النصوص */
-        .highlight {
-            color: #ff4d6d;
-            font-weight: bold;
-            position: relative;
-            display: inline-block;
-        }
-
-        .highlight:after {
-            content: '';
-            position: absolute;
-            bottom: 2px;
-            left: 0;
-            width: 100%;
-            height: 3px;
-            background: rgba(255, 77, 109, 0.3);
-            border-radius: 2px;
-        }
-
-        /* قسم الصور الخاصة */
-        .memory-section {
-            margin: 60px 0;
-            text-align: center;
-        }
-
-        .memory-title {
-            font-size: 2.2rem;
-            color: #ffb3c1;
-            margin-bottom: 30px;
-            position: relative;
-            display: inline-block;
-        }
-
-        .memory-title:after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100px;
-            height: 3px;
-            background: linear-gradient(90deg, #ff4d6d, #ff8e9e);
-        }
-
-        .memory-frame {
-            display: inline-block;
-            padding: 20px;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 20px;
-            border: 2px solid rgba(255, 77, 109, 0.3);
-            margin: 20px;
-            position: relative;
-            max-width: 300px;
-        }
-
-        .memory-frame:before {
-            content: "ذكرياتنا";
-            position: absolute;
-            top: -15px;
-            right: 20px;
-            background: linear-gradient(45deg, #ff4d6d, #ff8e9e);
-            padding: 5px 15px;
-            border-radius: 10px;
-            font-size: 1rem;
-            color: white;
-        }
-
-        .memory-placeholder {
-            width: 250px;
-            height: 250px;
-            background: linear-gradient(45deg, #1a0b2e, #2d0b3e);
-            border-radius: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 4rem;
-            color: rgba(255, 255, 255, 0.1);
-        }
-
-        .memory-caption {
-            margin-top: 15px;
-            font-size: 1.2rem;
-            color: #ff8e9e;
-        }
-
-        /* المؤقت الخاص */
-        .special-countdown {
-            text-align: center;
-            margin: 50px 0;
-            padding: 30px;
-            background: rgba(255, 77, 109, 0.05);
-            border-radius: 20px;
-            border: 1px solid rgba(255, 77, 109, 0.2);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .special-countdown:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(45deg, transparent, rgba(255, 77, 109, 0.05), transparent);
-            z-index: -1;
-        }
-
-        .countdown-title {
-            font-size: 1.8rem;
-            margin-bottom: 25px;
-            color: #ffb3c1;
-        }
-
-        .countdown-container {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
-
-        .countdown-item {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(5px);
-            border-radius: 15px;
-            padding: 20px;
-            min-width: 100px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            transition: all 0.3s;
-        }
-
-        .countdown-item:hover {
-            background: rgba(255, 77, 109, 0.2);
-            transform: translateY(-5px);
-        }
-
-        .countdown-number {
-            font-size: 2.5rem;
-            font-weight: bold;
-            color: #ff4d6d;
-            text-shadow: 0 0 10px rgba(255, 77, 109, 0.5);
-        }
-
-        .countdown-label {
-            font-size: 1.1rem;
-            margin-top: 10px;
-            color: #ff8e9e;
-        }
-
-        /* رسالة الحب الأخيرة */
-        .final-message {
-            text-align: center;
-            margin: 60px 0;
-            padding: 50px 30px;
-            background: linear-gradient(135deg, rgba(255, 77, 109, 0.1), rgba(42, 4, 24, 0.2));
-            border-radius: 20px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .final-message:before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(255, 77, 109, 0.05) 0%, transparent 70%);
-            z-index: -1;
-        }
-
-        .final-text {
-            font-size: 2.5rem;
-            color: #ff4d6d;
-            line-height: 1.5;
-            margin-bottom: 20px;
-            font-weight: bold;
-        }
-
-        .final-subtext {
-            font-size: 1.5rem;
-            color: #ff8e9e;
-        }
-
-        /* الموسيقى */
-        .music-player {
-            position: fixed;
-            bottom: 20px;
-            left: 20px;
-            z-index: 100;
-        }
-
-        .music-btn {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            background: linear-gradient(45deg, #ff4d6d, #ff8e9e);
-            border: none;
-            color: white;
-            font-size: 1.8rem;
-            cursor: pointer;
-            box-shadow: 0 10px 20px rgba(255, 77, 109, 0.3);
-            transition: all 0.3s;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .music-btn:hover {
-            transform: scale(1.1) rotate(10deg);
-            box-shadow: 0 15px 30px rgba(255, 77, 109, 0.4);
-        }
-
-        /* الفوتر الخاص */
-        .special-footer {
-            text-align: center;
-            padding: 40px 0;
-            margin-top: 40px;
+            margin-top: 30px;
+            padding-top: 20px;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
-            color: #ffb3c1;
             position: relative;
         }
 
-        .footer-heart {
-            color: #ff4d6d;
-            font-size: 2rem;
-            margin: 0 10px;
-            animation: heartbeat 1.5s infinite;
-            display: inline-block;
+        .signature-box:before {
+            content: '"';
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            font-size: 5rem;
+            color: rgba(255, 77, 109, 0.2);
+            font-family: 'Amiri', serif;
         }
 
         .signature {
             font-size: 1.5rem;
-            color: #ff4d6d;
-            margin-top: 20px;
-            font-family: 'Lateef', cursive;
+            color: var(--gold);
+            font-style: italic;
+            display: inline-block;
+            padding: 5px 20px;
+            background: rgba(255, 215, 0, 0.1);
+            border-radius: 10px;
+            border-right: 3px solid var(--gold);
         }
 
-        /* تأثيرات متحركة للرسائل */
         @keyframes fadeInUp {
             from {
                 opacity: 0;
-                transform: translateY(30px);
+                transform: translateY(40px);
             }
             to {
                 opacity: 1;
@@ -454,169 +237,412 @@
             }
         }
 
-        .message {
-            animation: fadeInUp 1s ease-out;
+        /* المؤقت التنازلي المحسن */
+        .countdown-section {
+            text-align: center;
+            margin: 60px 0;
+            padding: 40px 20px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 25px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            position: relative;
+            overflow: hidden;
         }
 
-        /* التجاوب مع الشاشات المختلفة */
+        .countdown-section:before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: conic-gradient(transparent, rgba(255, 77, 109, 0.1), transparent 30%);
+            animation: rotate 20s linear infinite;
+            z-index: -1;
+        }
+
+        @keyframes rotate {
+            100% { transform: rotate(360deg); }
+        }
+
+        .countdown-title {
+            font-size: 2.2rem;
+            margin-bottom: 40px;
+            color: var(--light);
+            font-family: 'Reem Kufi', sans-serif;
+        }
+
+        .countdown-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .countdown-item {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 30px 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .countdown-item:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 77, 109, 0.1);
+            border-color: rgba(255, 77, 109, 0.3);
+        }
+
+        .countdown-number {
+            font-size: 3.5rem;
+            font-weight: bold;
+            color: var(--primary);
+            text-shadow: 0 0 20px rgba(255, 77, 109, 0.5);
+            font-family: 'Reem Kufi', sans-serif;
+            margin-bottom: 10px;
+        }
+
+        .countdown-label {
+            font-size: 1.3rem;
+            color: var(--light);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* قسم الفيديو */
+        .video-section {
+            margin: 60px 0;
+            text-align: center;
+        }
+
+        .video-title {
+            font-size: 2.2rem;
+            color: var(--light);
+            margin-bottom: 30px;
+            font-family: 'Reem Kufi', sans-serif;
+            position: relative;
+            display: inline-block;
+        }
+
+        .video-title:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            right: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary), var(--gold));
+            border-radius: 2px;
+        }
+
+        .video-container {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            border-radius: 25px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            border: 3px solid rgba(255, 77, 109, 0.3);
+        }
+
+        .video-container iframe {
+            width: 100%;
+            height: 450px;
+            border: none;
+            display: block;
+        }
+
+        .video-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, rgba(255, 77, 109, 0.1), rgba(255, 215, 0, 0.1));
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        /* الرسالة الختامية */
+        .final-message {
+            text-align: center;
+            margin: 70px 0;
+            padding: 60px 30px;
+            background: linear-gradient(135deg, rgba(255, 77, 109, 0.1), rgba(42, 4, 24, 0.2));
+            border-radius: 30px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .final-message:before {
+            content: '';
+            position: absolute;
+            top: -100%;
+            left: -100%;
+            width: 300%;
+            height: 300%;
+            background: radial-gradient(circle, rgba(255, 215, 0, 0.1) 0%, transparent 70%);
+            animation: shimmer 10s linear infinite;
+            z-index: -1;
+        }
+
+        @keyframes shimmer {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .final-text {
+            font-size: 3.5rem;
+            color: var(--primary);
+            line-height: 1.4;
+            margin-bottom: 20px;
+            font-weight: bold;
+            font-family: 'Lateef', cursive;
+            text-shadow: 0 0 20px rgba(255, 77, 109, 0.3);
+        }
+
+        .final-subtext {
+            font-size: 1.8rem;
+            color: var(--gold);
+            max-width: 600px;
+            margin: 0 auto;
+            font-style: italic;
+        }
+
+        /* مشغل الموسيقى */
+        .audio-player {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            z-index: 100;
+        }
+
+        .audio-btn {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border: none;
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+            box-shadow: 0 10px 25px rgba(255, 77, 109, 0.4);
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .audio-btn:hover {
+            transform: scale(1.15) rotate(15deg);
+            box-shadow: 0 15px 35px rgba(255, 77, 109, 0.6);
+        }
+
+        /* الفوتر */
+        .romantic-footer {
+            text-align: center;
+            padding: 40px 0;
+            margin-top: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--light);
+            position: relative;
+        }
+
+        .footer-hearts {
+            font-size: 2rem;
+            margin: 20px 0;
+        }
+
+        .footer-hearts i {
+            color: var(--primary);
+            margin: 0 10px;
+            animation: heartbeat 1.5s infinite;
+            animation-delay: calc(var(--i) * 0.2s);
+        }
+
+        .personal-signature {
+            font-size: 1.8rem;
+            color: var(--gold);
+            margin-top: 20px;
+            font-family: 'Lateef', cursive;
+            padding: 15px 30px;
+            background: rgba(255, 215, 0, 0.1);
+            border-radius: 15px;
+            display: inline-block;
+            border-right: 3px solid var(--gold);
+        }
+
+        /* التجاوب مع الشاشات الصغيرة */
         @media (max-width: 768px) {
             .container {
-                padding: 10px;
+                padding: 15px;
             }
             
-            .special-header h1 {
+            .romantic-header h1 {
+                font-size: 2.8rem;
+            }
+            
+            .romantic-header h2 {
+                font-size: 1.8rem;
+            }
+            
+            .message-card {
+                padding: 40px 25px;
+            }
+            
+            .message-text {
+                font-size: 1.5rem;
+                line-height: 2;
+            }
+            
+            .countdown-number {
+                font-size: 2.8rem;
+            }
+            
+            .final-text {
                 font-size: 2.5rem;
             }
             
-            .special-header h2 {
-                font-size: 1.5rem;
+            .video-container iframe {
+                height: 300px;
             }
             
-            .message {
-                padding: 30px 20px;
+            .countdown-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .audio-player {
+                bottom: 20px;
+                left: 20px;
+            }
+            
+            .audio-btn {
+                width: 60px;
+                height: 60px;
+                font-size: 1.7rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .romantic-header h1 {
+                font-size: 2.2rem;
             }
             
             .message-text {
                 font-size: 1.3rem;
-                line-height: 2;
+            }
+            
+            .countdown-grid {
+                grid-template-columns: 1fr;
             }
             
             .final-text {
-                font-size: 1.8rem;
-            }
-            
-            .final-subtext {
-                font-size: 1.2rem;
-            }
-            
-            .countdown-item {
-                min-width: 80px;
-                padding: 15px;
-            }
-            
-            .countdown-number {
                 font-size: 2rem;
             }
             
-            .memory-frame {
-                max-width: 250px;
+            .video-container iframe {
+                height: 250px;
             }
-            
-            .memory-placeholder {
-                width: 200px;
-                height: 200px;
-            }
+        }
+
+        /* تأثيرات خاصة للنص */
+        .text-emphasis {
+            position: relative;
+            display: inline-block;
+        }
+
+        .text-emphasis:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary), var(--gold));
+            border-radius: 2px;
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .text-emphasis:hover:after {
+            transform: scaleX(1);
         }
     </style>
 </head>
 <body>
-    <!-- القلب النابض -->
-    <div class="heart-beat">
-        <i class="fas fa-heart"></i>
-    </div>
-
-    <!-- خلفية النجوم -->
-    <div class="stars" id="stars"></div>
+    <!-- خلفية متحركة -->
+    <div class="bg-animation"></div>
 
     <!-- الحاوية الرئيسية -->
     <div class="container">
-        <!-- الهيدر الخاص -->
-        <header class="special-header">
-            <h1>رسالتي إليكِ في رأس السنة ❤️</h1>
-            <h2>إصدار خاص جداً.. لكِ وحدكِ</h2>
-            <div class="date">31 ديسمبر 2025 - استعداداً لرأس السنة 2026</div>
+        <!-- الهيدر الرومانسي -->
+        <header class="romantic-header">
+            <h1>رسالة حب في رأس السنة 💖</h1>
+            <h2>من قلبي.. إلى قلبكِ</h2>
+            <div class="date-badge">31 ديسمبر 2025 - استعداداً لسنة 2026</div>
         </header>
 
         <!-- الرسالة الأولى -->
-        <section class="message-section">
-            <div class="message">
+        <section class="message-container">
+            <div class="message-card">
                 <div class="message-number">1</div>
-                <div class="message-content">
-                    <p class="message-text">
-                        مش عارف اوصفلك الوقت بيبقي عامل ازاي معاكي.. 
-                        <span class="highlight">أنا دائماً بقولك انك بالنسبه ليا غير أي حد</span> 
-                        لما كنت بقولك اني بحبك ببقي قاصد <span class="highlight">اعرفك مش افكرك</span>.. 
-                        اعرفك اني بقيت احبك اكتر من المره الي فاتت الي قولت فيها بحبك.. 
-                        وكل مره بقول <span class="highlight">انتي بتزيدي عندي غلابه</span>.. 
-                        أحب أهديلك الموقع ده بمناسبة اليوم الحلو ده واتمني يعجبك💗
-                    </p>
-                    <div class="message-signature">كلمات من القلب</div>
+                <div class="message-text">
+                    مش عارف أوصفلك الوقت بيبقى عامل إزاي معاكي.. 
+                    <span class="heart-word text-emphasis">أنا دايماً بقولك إنك بالنسبة لي غير أي حد</span> 
+                    لما كنت بقولك إني بحبك، بيكون قصدي <span class="heart-word text-emphasis">أعرفك مش أفكرك</span>.. 
+                    أعرفك إني بقيت أحبك أكتر من المرة اللي فاتت اللي قولت فيها بحبك.. 
+                    وكل مرة بقول <span class="heart-word text-emphasis">إنتِ بتزادي عندي غلابة</span>.. 
+                    أحب أهديلك الموقع ده بمناسبة اليوم الحلو ده واتمنى يعجبك 💗
+                </div>
+                <div class="signature-box">
+                    <span class="signature">كلمات من القلب</span>
                 </div>
             </div>
         </section>
 
         <!-- الرسالة الثانية -->
-        <section class="message-section">
-            <div class="message">
+        <section class="message-container">
+            <div class="message-card">
                 <div class="message-number">2</div>
-                <div class="message-content">
-                    <p class="message-text">
-                        <span class="highlight">أحبك</span>.. 
-                        حبًا يُعيد ترتيب الكون
-                        ويجعل من لقائنا موعدَ الأقدار
-                        ما أجمله من قدرٍ جمع قلبي بقلبك
-                        فصار نبضهما حكايةَ عمرٍ كامل
-                    </p>
-                    <div class="message-signature">من أعماق روحي</div>
+                <div class="message-text">
+                    <span class="heart-word text-emphasis">أحبك..</span><br>
+                    حبًا يُعيد ترتيب الكون<br>
+                    ويجعل من لقائنا موعدَ الأقدار<br>
+                    ما أجمله من قدرٍ جمع قلبي بقلبك<br>
+                    فصار نبضهما حكايةَ عمرٍ كامل
+                </div>
+                <div class="signature-box">
+                    <span class="signature">من أعماق روحي</span>
                 </div>
             </div>
         </section>
 
         <!-- الرسالة الثالثة -->
-        <section class="message-section">
-            <div class="message">
+        <section class="message-container">
+            <div class="message-card">
                 <div class="message-number">3</div>
-                <div class="message-content">
-                    <p class="message-text">
-                        <span class="highlight">أنتِ</span>
-                        نورٌ في دهليز ظلامي
-                        وربيعٌ في صحراء أيامي
-                        حين أبحث عن معنى للحياة
-                        أجدها في عينيكِ تُختزَل
-                    </p>
-                    <div class="message-signature">إلهامي الوحيد</div>
+                <div class="message-text">
+                    <span class="heart-word text-emphasis">أنتِ</span><br>
+                    نورٌ في دهليز ظلامي<br>
+                    وربيعٌ في صحراء أيامي<br>
+                    حين أبحث عن معنى للحياة<br>
+                    أجدها في عينيكِ تُختزَل
+                </div>
+                <div class="signature-box">
+                    <span class="signature">إلهامي الوحيد</span>
                 </div>
             </div>
         </section>
 
-        <!-- الرسالة الرابعة -->
-        <section class="message-section">
-            <div class="message">
-                <div class="message-number">4</div>
-                <div class="message-content">
-                    <p class="message-text">
-                        <span class="highlight">ليتك تعلمي</span>
-                        أنك لست شخصًا في حياتي
-                        بل أنت الحياة كلها في شخص
-                        بدونك، تتحول الأيام إلى ظلال
-                        ويعود القلب إلى صمته القديم.
-                    </p>
-                    <div class="message-signature">حقيقة وجودي</div>
-                </div>
-            </div>
-        </section>
-
-        <!-- الرسالة الخامسة -->
-        <section class="message-section">
-            <div class="message">
-                <div class="message-number">5</div>
-                <div class="message-content">
-                    <p class="message-text">
-                        أقول <span class="highlight">"أحبك"</span>
-                        فتكسر الكلمة كل القيود
-                        وتصنع من قلوبنا وطنًا للخلود
-                        حبنا ليس مجرد شعور
-                        بل هو مصير كتبته الأقدار قبل أن نولد.
-                    </p>
-                    <div class="message-signature">قصة حبنا</div>
-                </div>
-            </div>
-        </section>
-
-        <!-- المؤقت الخاص -->
-        <section class="special-countdown">
-            <h3 class="countdown-title">الوقت المتبقي حتى نبدأ سنة جديدة من الحب</h3>
-            <div class="countdown-container">
+        <!-- المؤقت التنازلي -->
+        <section class="countdown-section">
+            <h3 class="countdown-title">الوقت المتبقي لنبدأ سنة جديدة من الحب ❤️</h3>
+            <div class="countdown-grid">
                 <div class="countdown-item">
                     <div class="countdown-number" id="days">00</div>
                     <div class="countdown-label">أيام</div>
@@ -636,33 +662,5 @@
             </div>
         </section>
 
-        <!-- قسم الذكريات (يمكنك إضافة صور حقيقية لاحقاً) -->
-        <section class="memory-section">
-            <h3 class="memory-title">مكان لذكرياتنا الجميلة</h3>
-            <div class="memory-frame">
-                <div class="memory-placeholder">
-                    <i class="fas fa-heart"></i>
-                </div>
-                <div class="memory-caption">مكان لصورة نحن فيها سعداء</div>
-            </div>
-            <div class="memory-frame">
-                <div class="memory-placeholder">
-                    <i class="fas fa-star"></i>
-                </div>
-                <div class="memory-caption">لحظة لا تنسى من حكايتنا</div>
-            </div>
-        </section>
-
-        <!-- الرسالة الأخيرة -->
-        <section class="final-message">
-            <div class="final-text">
-                كل عام وأنتي <span class="highlight">عيدي</span> يا بنوتي💗
-            </div>
-            <div class="final-subtext">
-                سنة 2026 تكون سنة حب وسعادة وذكريات لا تنسى بيننا
-            </div>
-        </section>
-
-        <!-- الفوتر الخاص -->
-        <footer class="special-footer">
-            <p>هذا الموقع مخصص لكِ وحدكِ.. إهداء 
+        <!-- الرسالة الرابعة -->
+        <section class="messag
