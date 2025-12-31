@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>احتفالية رأس السنة الميلادية 2026 - رومانسية</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #0c0c2e 0%, #1a1a3e 50%, #2d1b3e 100%);
+            color: #fff;
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* تأثير النجوم في الخلفية */
+        .stars {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .star {
+            position: absolute;
+            background-color: #fff;
+            border-radius: 50%;
+            animation: twinkle 3s infinite;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 1; }
+        }
+
+        /* الحاوية الرئيسية */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            z-index: 1;
+            position: relative;
+        }
+
+        /* الهيدر */
+        header {
+            text-align: center;
+            padding: 40px 0;
+            position: relative;
+        }
+
+        .header-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+            background: linear-gradient(45deg, #ff9a9e, #fad0c4, #fad0c4, #a18cd1);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: 0 0 20px rgba(255, 154, 158, 0.3);
+        }
+
+        .header-content h2 {
+            font-size: 2rem;
+            color: #ffdde1;
+            margin-bottom: 20px;
+        }
+
+        .romantic-subtitle {
+            font-size: 1.3rem;
+            color: #f8c8dc;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
+            padding: 15px;
+            border-radius: 15px;
+            background: rgba(255, 221, 225, 0.1);
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 221, 225, 0.2);
+        }
+
+        /* المؤقت التنازلي */
+        .countdown-section {
+            text-align: center;
+            margin: 40px 0;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .countdown-title {
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            color: #ffdde1;
+        }
+
+        .countdown {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .countdown-item {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 20px 15px;
+            min-width: 120px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: transform 0.3s;
+        }
+
+        .countdown-item:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .countdown-number {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #ff9a9e;
+            text-shadow: 0 0 10px rgba(255, 154, 158, 0.5);
+        }
+
+        .countdown-label {
+            font-size: 1.2rem;
+            margin-top: 10px;
+            color: #f8c8dc;
+        }
+
+        /* قسم الوعود الرومانسية */
+        .promises-section {
+            margin: 50px 0;
+            padding: 30px;
+            background: rgba(255, 221, 225, 0.05);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 221, 225, 0.1);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 30px;
+            color: #ffdde1;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(90deg, #ff9a9e, #a18cd1);
+        }
+
+        .promise-form {
+            display: flex;
+            flex-direction: column;
+            max-width: 600px;
+            margin: 0 auto;
+            gap: 20px;
+        }
+
+        .promise-input {
+            padding: 15px;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 221, 225, 0.3);
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            font-size: 1.1rem;
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .promise-input:focus {
+            outline: none;
+            border-color: #ff9a9e;
+            box-shadow: 0 0 10px rgba(255, 154, 158, 0.5);
+        }
+
+        .promise-btn {
+            padding: 15px 30px;
+            background: linear-gradient(45deg, #ff9a9e, #a18cd1);
+            border: none;
+            border-radius: 10px;
+            color: white;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .promise-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(161, 140, 209, 0.4);
+        }
+
+        /* قسم التهاني */
+        .wishes-section {
+            margin: 50px 0;
+            padding: 30px;
+            background: rgba(161, 140, 209, 0.05);
+            border-radius: 20px;
+            border: 1px solid rgba(161, 140, 209, 0.1);
+        }
+
+        .wishes-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .wish-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: transform 0.3s;
+        }
+
+        .wish-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .wish-text {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 15px;
+            color: #f8c8dc;
+        }
+
+        .wish-author {
+            text-align: left;
+            font-style: italic;
+            color: #ff9a9e;
+        }
+
+        /* خيارات الموسيقى */
+        .music-controls {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            z-index: 100;
+        }
+
+        .music-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: rgba(255, 154, 158, 0.8);
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s;
+        }
+
+        .music-btn:hover {
+            background: rgba(255, 154, 158, 1);
+            transform: scale(1.1);
+        }
+
+        /* الفوتر */
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #f8c8dc;
+        }
+
+        .heart {
+            color: #ff9a9e;
+            animation: heartbeat 1.5s infinite;
+        }
+
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        /* التجاوب مع الشاشات المختلفة */
+        @media (max-width: 768px) {
+            .header-content h1 {
+                font-size: 2.5rem;
+            }
+            
+            .header-content h2 {
+                font-size: 1.5rem;
+            }
+            
+            .countdown-item {
+                min-width: 80px;
+                padding: 15px 10px;
+            }
+            
+            .countdown-number {
+                font-size: 2rem;
+            }
+            
+            .countdown-label {
+                font-size: 1rem;
+            }
+            
+            .container {
+                padding: 10px;
+            }
+            
+            .romantic-subtitle {
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- خلفية النجوم -->
+    <div class="stars" id="stars"></div>
+
+    <!-- الحاوية الرئيسية -->
+    <div class="container">
+        <!-- الهيدر -->
+        <header>
+            <div class="header-content">
+                <h1><i class="fas fa-heart"></i> رأس سنة 2026 سعيدة <i class="fas fa-heart"></i></h1>
+                <h2>أبدأ سنة جديدة مليئة بالحب والرومانسية</h2>
+                <div class="romantic-subtitle">
+                    "مع بداية كل عام، نجد الفرصة لنعيد كتابة قصصنا بلمسة من الحب والأمل. سنة 2026 ستكون سنة جديدة لبناء ذكريات لا تنسى مع من تحب"
+                </div>
+            </div>
+        </header>
+
+        <!-- المؤقت التنازلي -->
+        <section class="countdown-section">
+            <h3 class="countdown-title">الوقت المتبقي حتى رأس السنة 2026</h3>
+            <div class="countdown">
+                <div class="countdown-item">
+                    <div class="countdown-number" id="days">00</div>
+                    <div class="countdown-label">أيام</div>
+                </div>
+                <div class="countdown-item">
+                    <div class="countdown-number" id="hours">00</div>
+                    <div class="countdown-label">ساعات</div>
+                </div>
+                <div class="countdown-item">
+                    <div class="countdown-number" id="minutes">00</div>
+                    <div class="countdown-label">دقائق</div>
+                </div>
+                <div class="countdown-item">
+                    <div class="countdown-number" id="seconds">00</div>
+                    <div class="countdown-label">ثواني</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- قسم الوعود الرومانسية -->
+        <section class="promises-section">
+            <h3 class="section-title">وعود رومانسية للعام الجديد</h3>
+            <p style="text-align: center; margin-bottom: 25px; color: #f8c8dc; font-size: 1.1rem;">
+                اكتب وعدًا رومانسيًا تريد الوفاء به في سنة 2026 لمن تحب
+            </p>
+            <form class="promise-form" id="promiseForm">
+                <textarea class="promise-input" id="promiseInput" placeholder="اكتب وعدك الرومانسي هنا... مثل: سأقضي وقتًا أكثر معك، سأفاجئك برحلات غير متوقعة، سأكون دائمًا بجانبك..."></textarea>
+                <input type="text" class="promise-input" id="promiseName" placeholder="اسمك (اختياري)" style="min-height: auto;">
+                <button type="submit" class="promise-btn">أضف الوعد <i class="fas fa-heart"></i></button>
+            </form>
+        </section>
+
+        <!-- قسم التهاني -->
+        <section class="wishes-section">
+            <h3 class="section-title">تهانينا الرومانسية للعام الجديد</h3>
+            <p style="text-align: center; margin-bottom: 25px; color: #f8c8dc; font-size: 1.1rem;">
+                شارك تهنئتك الرومانسية للعام الجديد 2026
+            </p>
+            <div class="wishes-container" id="wishesContainer">
+                <!-- سيتم إضافة التهاني هنا ديناميكيًا -->
+            </div>
+        </section>
+
+        <!-- الفوتر -->
+        <footer>
+            <p>كل عام وأنتم بألف خير. سنة 2026 سنة حب وسعادة ورومانسية <span class="heart">♥</span></p>
+            <p>© 2025 - 2026 | موقع احتفالي رومانسي برأس السنة الميلادية</p>
+        </footer>
+    </div>
+
+    <!-- عناصر الموسيقى -->
+    <div class="music-controls">
+        <button class="music-btn" id="musicBtn">
+            <i class="fas fa-music"></i>
+        </button>
+    </div>
+
+    <!-- الصوت -->
+    <audio id="backgroundMusic" loop>
+        <source src="https://assets.mixkit.co/music/preview/mixkit-romantic-sunset-687.mp3" type="audio/mpeg">
+        متصفحك لا يدعم تشغيل الصوتيات.
+    </audio>
+
+    <script>
+        // إنشاء النجوم في الخلفية
+        function createStars() {
+            const starsContainer = document.getElementById('stars');
+            const starCount = 150;
+            
+            for (let i = 0; i < starCount; i++) {
+                const star = document.createElement('div');
+                star.classList.add('star');
+                
+                // حجم عشوائي للنجوم
+                const size = Math.random() * 3 + 1;
+                star.style.width = `${size}px`;
+                star.style.height = `${size}px`;
+                
+                // موقع عشوائي
+                star.style.left = `${Math.random() * 100}%`;
+                star.style.top = `${Math.random() * 100}%`;
+                
+                // تأخير عشوائي للوميض
+                star.style.animationDelay = `${Math.random() * 3}s`;
+                
+                starsContainer.appendChild(star);
+            }
+        }
+
+        // المؤقت التنازلي
+        function updateCountdown() {
+            const now = new Date();
+            const newYear = new Date('January 1, 2026 00:00:00');
+            const diff = newYear - now;
+            
+            if (diff <= 0) {
+                document.getElementById('days').textContent = '00';
+                document.getElementById('hours').textContent = '00';
+                document.getElementById('minutes').textContent = '00';
+                document.getElementById('seconds').textContent = '00';
+                return;
+            }
+            
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+            
+            document.getElementById('days').textContent = days.toString().padStart(2, '0');
+            document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+            document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+            document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+        }
+
+        // إضافة وعود رومانسية
+        document.getElementById('promiseForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const promiseText = document.getElementById('promiseInput').value;
+            const promiseName = document.getElementById('promiseName').value || "شخص رومانسي";
+            
+            if (!promiseText.trim()) {
+                alert('الرجاء كتابة وعد رومانسي');
+                return;
+            }
+            
+            // إنشاء بطاقة الوعد
+            const wishCard = document.createElement('div');
+            wishCard.classList.add('wish-card');
+            
+            wishCard.innerHTML = `
+                <p class="wish-text">"${promiseText}"</p>
+                <p class="wish-author">- ${promiseName}</p>
+            `;
+            
+            document.getElementById('wishesContainer').prepend(wishCard);
+            
+            // إضافة تأثير
+            wishCard.style.opacity = '0';
+            wishCard.style.transform = 'translateY(20px)';
+            
+            setTimeout(() => {
+                wishCard.style.transition = 'opacity 0.5s, transform 0.5s';
+                wishCard.style.opacity = '1';
+                wishCard.style.transform = 'translateY(0)';
+            }, 10);
+            
+            // إعادة تعيين الحقول
+            document.getElementById('promiseInput').value = '';
+            document.getElementById('promiseName').value = '';
+            
+            // إشعار
+            alert('تم إضافة وعدك الرومانسي بنجاح!');
+        });
+
+        // التحكم بالموسيقى
+        const musicBtn = document.getElementById('musicBtn');
+        const backgroundMusic = document.getElementById('backgroundMusic');
+        let isPlaying = false;
+
+        musicBtn.addEventListener('click', function() {
+            if (isPlaying) {
+                backgroundMusic.pause();
+                musicBtn.innerHTML = '<i class="fas fa-music"></i>';
+                musicBtn.style.background = 'rgba(255, 154, 158, 0.8)';
+            } else {
+                backgroundMusic.play().catch(e => {
+                    alert('لبدء الموسيقى، يرجى النقر على الموقع أولاً');
+                    console.log(e);
+                });
+                musicBtn.innerHTML = '<i class="fas fa-pause"></i>';
+                musicBtn.style.background = 'rgba(161, 140, 209, 0.8)';
+            }
+            isPlaying = !isPlaying;
+        });
+
+        // إضافة بعض التهاني الافتراضية
+        const defaultWishes = [
+            {text: "أتمنى أن تكون سنة 2026 سنة حب وسعادة ورومانسية لا تنتهي لنا معًا", author: "محب"},
+            {text: "كل عام وأنتِ أغلى ما في حياتي، سنة جديدة مليئة بالأحلام الجميلة معًا", author: "عاشق"},
+            {text: "مع إشراقة عام جديد، أعدك بأن تكون حياتنا معًا أجمل مما تتخيلين", author: "رومانسي"},
+            {text: "أحبك أكثر مع كل عام يمر، سنة 2026 ستكون سنة لا تنسى بحبنا", author: "حبيب"}
+        ];
+
+        // تحميل التهاني الافتراضية
+        function loadDefaultWishes() {
+            const wishesContainer = document.getElementById('wishesContainer');
+            
+            defaultWishes.forEach(wish => {
+                const wishCard = document.createElement('div');
+                wishCard.classList.add('wish-card');
+                
+                wishCard.innerHTML = `
+                    <p class="wish-text">"${wish.text}"</p>
+                    <p class="wish-author">- ${wish.author}</p>
+                `;
+                
+                wishesContainer.appendChild(wishCard);
+            });
+        }
+
+        // تهيئة الموقع عند التحميل
+        document.addEventListener('DOMContentLoaded', function() {
+            createStars();
+            updateCountdown();
+            loadDefaultWishes();
+            
+            // تحديث المؤكل كل ثانية
+            setInterval(updateCountdown, 1000);
+            
+            // تفعيل الموسيقى عند النقر الأول
+            document.body.addEventListener('click', function initMusic() {
+                // نزيل المستمع بعد النقر الأول
+                document.body.removeEventListener('click', initMusic);
+                
+                // نبدأ تشغيل الموسيقى تلقائيًا
+                backgroundMusic.volume = 0.5;
+                backgroundMusic.play().then(() => {
+                    isPlaying = true;
+                    musicBtn.innerHTML = '<i class="fas fa-pause"></i>';
+                    musicBtn.style.background = 'rgba(161, 140, 209, 0.8)';
+                }).catch(e => {
+                    console.log("المستخدم لم يسمح بتشغيل الموسيقى تلقائيًا");
+                });
+            });
+        });
+    </script>
+</body>
+  </html>
