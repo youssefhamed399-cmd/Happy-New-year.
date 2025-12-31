@@ -29,6 +29,78 @@
             color: white;
             min-height: 100vh;
             line-height: 1.8;
+            overflow-x: hidden;
+        }
+
+        /* شاشة الانتظار */
+        .waiting-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #0a0a1a 0%, #1a0b2e 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 1s ease;
+        }
+
+        .waiting-screen.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .waiting-content {
+            text-align: center;
+            padding: 40px;
+            max-width: 700px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 25px;
+            border: 2px solid rgba(255, 77, 109, 0.3);
+            box-shadow: var(--shadow);
+            backdrop-filter: blur(10px);
+        }
+
+        .waiting-title {
+            font-family: 'Lateef', cursive;
+            font-size: 3.5rem;
+            background: linear-gradient(45deg, var(--primary), var(--gold));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 30px;
+        }
+
+        .waiting-text {
+            font-size: 1.5rem;
+            color: var(--light);
+            margin-bottom: 40px;
+            line-height: 1.8;
+        }
+
+        .waiting-clock {
+            font-size: 4rem;
+            font-family: 'Reem Kufi', sans-serif;
+            color: var(--primary);
+            margin: 30px 0;
+            text-shadow: 0 0 20px rgba(255, 77, 109, 0.5);
+        }
+
+        .midnight-info {
+            background: rgba(255, 77, 109, 0.1);
+            padding: 20px;
+            border-radius: 15px;
+            margin: 30px 0;
+            border: 1px solid rgba(255, 77, 109, 0.3);
+        }
+
+        .current-time {
+            font-size: 1.3rem;
+            color: var(--gold);
+            margin-top: 20px;
         }
 
         /* حاوية رئيسية */
@@ -36,6 +108,12 @@
             max-width: 900px;
             margin: 0 auto;
             padding: 20px;
+            opacity: 0;
+            transition: opacity 1s ease;
+        }
+
+        .main-container.show {
+            opacity: 1;
         }
 
         /* الهيدر */
@@ -46,6 +124,7 @@
             border-radius: 20px;
             margin-bottom: 40px;
             border: 2px solid rgba(255, 77, 109, 0.2);
+            animation: fadeIn 1.5s ease;
         }
 
         .header h1 {
@@ -75,7 +154,7 @@
             color: var(--light);
         }
 
-        /* قسم المؤقت - تم التصحيح */
+        /* قسم المؤقت */
         .countdown-section {
             background: rgba(255, 255, 255, 0.05);
             border-radius: 20px;
@@ -83,6 +162,7 @@
             margin: 40px 0;
             text-align: center;
             border: 1px solid rgba(255, 255, 255, 0.1);
+            animation: fadeIn 1.5s ease 0.5s both;
         }
 
         .countdown-title {
@@ -128,6 +208,14 @@
             border: 1px solid rgba(255, 255, 255, 0.1);
             position: relative;
             overflow: hidden;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .message.show {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         .message:before {
@@ -162,10 +250,18 @@
             border-top: 1px solid rgba(255, 215, 0, 0.2);
         }
 
-        /* قسم الفيديو - تم التصحيح */
+        /* قسم الفيديو */
         .video-section {
             margin: 50px 0;
             text-align: center;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease 1s;
+        }
+
+        .video-section.show {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         .video-title {
@@ -198,6 +294,14 @@
             background: linear-gradient(135deg, rgba(255, 77, 109, 0.1), rgba(255, 215, 0, 0.1));
             border-radius: 20px;
             margin: 40px 0;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease 1.5s;
+        }
+
+        .final-message.show {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         .final-text {
@@ -219,6 +323,14 @@
             margin-top: 50px;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
             color: var(--light);
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease 2s;
+        }
+
+        footer.show {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         .footer-heart {
@@ -232,6 +344,11 @@
             0% { transform: scale(1); }
             50% { transform: scale(1.2); }
             100% { transform: scale(1); }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
 
         /* زر الموسيقى */
@@ -249,10 +366,30 @@
             cursor: pointer;
             box-shadow: var(--shadow);
             z-index: 100;
+            opacity: 0;
+            transform: scale(0.8);
+            transition: all 0.5s ease 2.5s;
+        }
+
+        .music-btn.show {
+            opacity: 1;
+            transform: scale(1);
         }
 
         /* التجاوب */
         @media (max-width: 768px) {
+            .waiting-title {
+                font-size: 2.5rem;
+            }
+            
+            .waiting-clock {
+                font-size: 3rem;
+            }
+            
+            .waiting-text {
+                font-size: 1.3rem;
+            }
+            
             .header h1 {
                 font-size: 2.5rem;
             }
@@ -278,10 +415,62 @@
                 font-size: 2.2rem;
             }
         }
+
+        /* تأثيرات النجوم في شاشة الانتظار */
+        .stars {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        .star {
+            position: absolute;
+            background-color: #fff;
+            border-radius: 50%;
+            animation: twinkle 3s infinite;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 1; }
+        }
     </style>
 </head>
 <body>
-    <div class="main-container">
+    <!-- شاشة الانتظار حتى منتصف الليل -->
+    <div class="waiting-screen" id="waitingScreen">
+        <div class="stars" id="stars"></div>
+        <div class="waiting-content">
+            <h1 class="waiting-title">⏰ في انتظار منتصف الليل</h1>
+            <div class="waiting-text">
+                هذا الموقع الإهداء الخاص مفتوح فقط عند الساعة 12:00 منتصف الليل
+                <br>
+                ⭐ هذه رسالة حب خاصة ستظهر عندما يحين الوقت المناسب ⭐
+            </div>
+            
+            <div class="midnight-info">
+                <p>الموقع سيفتح تلقائياً عند:</p>
+                <div class="waiting-clock" id="targetTime">12:00:00</div>
+                <p>صباحاً (منتصف الليل)</p>
+            </div>
+            
+            <div class="current-time">
+                الوقت الحالي: <span id="currentTime">--:--:--</span>
+            </div>
+            
+            <div style="margin-top: 40px; padding: 20px; background: rgba(255,215,0,0.1); border-radius: 15px; border: 1px solid rgba(255,215,0,0.3);">
+                <p style="color: var(--gold); font-size: 1.2rem;">
+                    💖 هذه الهدية تستحق الانتظار حتى منتصف الليل 💖
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- المحتوى الرئيسي (مخفي حتى منتصف الليل) -->
+    <div class="main-container" id="mainContainer">
         <!-- الهيدر -->
         <header class="header">
             <h1>رسالة حب في رأس السنة ❤️</h1>
@@ -289,7 +478,7 @@
             <div class="date-badge">ديسمبر 2025 - يناير 2026</div>
         </header>
 
-        <!-- المؤقت التنازلي - شغال 100% -->
+        <!-- المؤقت التنازلي -->
         <section class="countdown-section">
             <h3 class="countdown-title">الوقت المتبقي لسنة جديدة من الحب 💖</h3>
             <div class="countdown-container">
@@ -339,7 +528,7 @@
             <div class="signature">من أعماق روحي</div>
         </section>
 
-        <!-- الفيديو - شغال 100% -->
+        <!-- الفيديو -->
         <section class="video-section">
             <h3 class="video-title">لحظات من حبنا 💕</h3>
             <div class="video-wrapper">
@@ -419,106 +608,42 @@
     </audio>
 
     <script>
-        // 1. المؤقت التنازلي - يعمل 100%
-        function updateCountdown() {
-            const now = new Date();
-            // 1 يناير 2026 الساعة 12:00:00 صباحاً
-            const newYear2026 = new Date('January 1, 2026 00:00:00 GMT+0200');
-            const difference = newYear2026 - now;
+        // ====================== نظام فتح الموقع عند منتصف الليل ======================
+        
+        // إنشاء النجوم في شاشة الانتظار
+        function createStars() {
+            const starsContainer = document.getElementById('stars');
+            const starCount = 100;
             
-            if (difference <= 0) {
-                // إذا وصلنا إلى رأس السنة
-                document.getElementById('days').textContent = '00';
-                document.getElementById('hours').textContent = '00';
-                document.getElementById('minutes').textContent = '00';
-                document.getElementById('seconds').textContent = '00';
-                document.querySelector('.countdown-title').innerHTML = '🎉 سنة 2026 بدأت بحبنا! 💖';
-                return;
-            }
-            
-            // حساب الوقت
-            const days = Math.floor(difference / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((difference % (1000 * 60)) / 1000);
-            
-            // تحديث العرض
-            document.getElementById('days').textContent = days.toString().padStart(2, '0');
-            document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
-            document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
-            document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
-        }
-        
-        // تشغيل المؤقت فوراً وتحديثه كل ثانية
-        updateCountdown();
-        const countdownInterval = setInterval(updateCountdown, 1000);
-        
-        // 2. الموسيقى
-        const musicBtn = document.getElementById('musicBtn');
-        const backgroundMusic = document.getElementById('backgroundMusic');
-        let isMusicPlaying = false;
-        
-        musicBtn.addEventListener('click', function() {
-            if (isMusicPlaying) {
-                backgroundMusic.pause();
-                musicBtn.innerHTML = '<i class="fas fa-music"></i>';
-            } else {
-                backgroundMusic.play().catch(e => {
-                    console.log("المستخدم لم يسمح بتشغيل الموسيقى");
-                });
-                musicBtn.innerHTML = '<i class="fas fa-pause"></i>';
-            }
-            isMusicPlaying = !isMusicPlaying;
-        });
-        
-        // تشغيل الموسيقى تلقائياً بعد ثانيتين
-        setTimeout(() => {
-            backgroundMusic.volume = 0.3;
-            backgroundMusic.play().then(() => {
-                isMusicPlaying = true;
-                musicBtn.innerHTML = '<i class="fas fa-pause"></i>';
-            }).catch(e => {
-                console.log("سيتم تشغيل الموسيقى يدوياً");
-            });
-        }, 2000);
-        
-        // 3. تأثيرات تفاعلية للنصوص
-        document.querySelectorAll('.highlight').forEach(element => {
-            element.addEventListener('mouseenter', function() {
-                this.style.textShadow = '0 0 10px rgba(255, 77, 109, 0.7)';
-            });
-            
-            element.addEventListener('mouseleave', function() {
-                this.style.textShadow = 'none';
-            });
-        });
-        
-        // 4. رسالة خاصة عند النقر على التوقيع
-        document.querySelectorAll('.signature').forEach(sig => {
-            sig.addEventListener('click', function() {
-                alert('كل كلمة كتبتها لكِ من القلب ❤️');
-            });
-        });
-        
-        // 5. تأكيد أن الصفحة قد تم تحميلها بالكامل
-        window.addEventListener('load', function() {
-            console.log('✅ الموقع تم تحميله بنجاح!');
-            console.log('✅ المؤقت التنازلي يعمل');
-            console.log('✅ الفيديو جاهز');
-            console.log('✅ الموسيقى جاهزة');
-            
-            // إضافة تأثير بسيط للرسائل
-            document.querySelectorAll('.message').forEach((msg, index) => {
-                msg.style.opacity = '0';
-                msg.style.transform = 'translateY(20px)';
+            for (let i = 0; i < starCount; i++) {
+                const star = document.createElement('div');
+                star.classList.add('star');
                 
-                setTimeout(() => {
-                    msg.style.transition = 'opacity 0.8s, transform 0.8s';
-                    msg.style.opacity = '1';
-                    msg.style.transform = 'translateY(0)';
-                }, index * 300);
-            });
-        });
-    </script>
-</body>
-    </html>
+                const size = Math.random() * 3 + 1;
+                star.style.width = `${size}px`;
+                star.style.height = `${size}px`;
+                
+                star.style.left = `${Math.random() * 100}%`;
+                star.style.top = `${Math.random() * 100}%`;
+                
+                star.style.animationDelay = `${Math.random() * 3}s`;
+                
+                starsContainer.appendChild(star);
+            }
+        }
+
+        // تحديث الوقت الحالي في شاشة الانتظار
+        function updateCurrentTime() {
+            const now = new Date();
+            const hours = now.getHours().toString().padStart(2, '0');
+            const minutes = now.getMinutes().toString().padStart(2, '0');
+            const seconds = now.getSeconds().toString().padStart(2, '0');
+            
+            document.getElementById('currentTime').textContent = `${hours}:${minutes}:${seconds}`;
+        }
+
+        // حساب الوقت المتبقي حتى منتصف الليل
+        function getTimeUntilMidnight() {
+            const now = new Date();
+            
+            // إنشاء تاريخ منتصف الليل القادم
